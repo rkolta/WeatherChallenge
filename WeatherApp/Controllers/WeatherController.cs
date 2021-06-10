@@ -17,8 +17,15 @@ namespace WeatherApp.Controllers
         }
         public async Task<IActionResult> IndexAsync()
         {
-            Weather model= await _service.GetWeatherAsync();
+            Weather model = await _service.GetWeatherAsync();
             return View(model);
+        }
+
+        public ActionResult PercentageOfFailure()
+        {
+            decimal percentOfFailure = _service.PercentageOfFailure();
+           // Weather model = await _service.GetWeatherAsync();
+            return View(percentOfFailure);
         }
     }
 }

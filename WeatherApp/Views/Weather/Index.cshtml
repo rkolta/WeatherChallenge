@@ -5,5 +5,14 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">The temperature is @Model.Temperature °F</h1>
+    @if (Model == null)
+    {
+        <h1 class="display-4">The website ran into an issue, please try again later.</h1>
+    }
+    else
+    {
+        <h1 class="display-4">The temperature is @Model.Temperature °F</h1>
+    }
+
+
 </div>
